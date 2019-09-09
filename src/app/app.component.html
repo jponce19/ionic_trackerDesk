@@ -3,18 +3,14 @@
   
   <div class="col-md-8 col-xs-12 ">
     <agm-map [latitude]="lat" [longitude]="lng">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      <agm-marker *ngFor="let taxista of taxistas" [latitude]="taxista.lat" [longitude]="taxista.lng"></agm-marker>
     </agm-map> 
   </div>
   <div class="col-md-4 col-xs-12">
     <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action active">
-        Cras justo odio
+      <a href="#" *ngFor="let taxista of taxistas " class="list-group-item list-group-item-action active">
+        {{taxista.nombre}}
       </a>
-      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-      <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-      <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-      <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
     </div>  
   </div>
 </div>
